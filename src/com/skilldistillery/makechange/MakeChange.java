@@ -30,7 +30,8 @@ public class MakeChange {
 		}
 		// prints change
 		printChange(price, tender);
-		return;
+		kb.close();
+		//return;
 
 	}
 
