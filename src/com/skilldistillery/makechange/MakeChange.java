@@ -25,6 +25,7 @@ public class MakeChange {
 			tender = getMoneyInput("Enter the total amount you are paying with: ");
 
 		}
+		printChange(price, tender);
 
 	}
 
@@ -68,12 +69,37 @@ public class MakeChange {
 
 	public static void printChange(double price, double tender) {
 
-		double paper = tender - price; // gets change
+		double change = tender - price; // gets change
 
-		int changeDollars = (int) paper;
+		int changeDollars = (int) change;
 
-		double changeCoins = paper - (double) ((int) paper);
+		double changeCoins = change - (double) ((int) change);
+
+		System.out.println("****************************************");
+		System.out.println("*                                      *");
+		System.out.printf("*   paying with:    $ %6.2f%11s*%n", tender, "");
+		System.out.println("*                                      *");
+		System.out.printf("*   Total due:      $ %6.2f%11s*%n", price, "");
+		System.out.println("*                 ___________          *");
+		System.out.println("*                                      *");
+		System.out.printf("*   Change back:    $ %6.2f%11s*%n", change, "");
+		System.out.println("*                                      *");
+		// loop to add specific change values
+		System.out.println("*                                      *");
+		System.out.println("****************************************");
 
 	}
+
+	// ****************************************
+	
+	// *   Number of $20 bills:              *
+	// *   Number of $10 bills:              *
+	// *   Number of $5 bills:               *
+	// *   Number of $1 bills:               *
+	// *   Number of quarters:               *
+	// *   Number of dimes:                  *
+	// *   Number of nickels:                *
+	// *   Number of dimes:                  *
+	
 
 }
