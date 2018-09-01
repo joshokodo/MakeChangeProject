@@ -7,10 +7,16 @@ public class MakeChange {
 
 	static Scanner kb = new Scanner(System.in);
 
+	
+	
 	public static void main(String[] args) {
 
 		double price = 0.0;
 		double tender = 0.0;
+
+		double a = .25;
+		double b = 100;
+		System.out.println(a * b);
 
 		System.out
 				.println("Welcome to the Money Sink! " + "Where we don't judge you for blowing all that moola, Baby!");
@@ -87,19 +93,74 @@ public class MakeChange {
 		// loop to add specific change values
 		System.out.println("*                                      *");
 		System.out.println("****************************************");
+		getDollarChangeStrings(changeDollars);
+		System.out.println();
+		getCoinChangeString(changeCoins);
+	}
 
+	
+	
+	
+	
+	//TODO refactor to not need to split change and to do it as effectively as possible
+	
+	public static String getDollarChangeStrings(int dollars) {
+		String changeString = "";
+
+		int remainingDollars = dollars;
+
+		int numOf20s = remainingDollars / 20;
+		remainingDollars %= 20;
+
+		int numOf10s = remainingDollars / 10;
+		remainingDollars %= 10;
+
+		int numOf5s = remainingDollars / 5;
+		remainingDollars %= 5;
+
+		int numOf1s = remainingDollars / 1;
+		remainingDollars %= 1;
+
+		System.out.println(numOf20s);
+		System.out.println(numOf10s);
+		System.out.println(numOf5s);
+		System.out.println(numOf1s);
+		return null;
+	}
+
+	public static String getCoinChangeString(double coins) {
+
+		int remainingCoins = (int) (coins * 100);
+
+		int numOfQuarters = remainingCoins / 25;
+		remainingCoins %= 25;
+
+		int numOfDimes = remainingCoins / 10;
+		remainingCoins %= 10;
+
+		int numOfNickels = remainingCoins / 05;
+		remainingCoins %= 05;
+
+		int numOfPennies = remainingCoins / 01;
+		remainingCoins %= 01;
+
+		System.out.println(numOfQuarters);
+		System.out.println(numOfDimes);
+		System.out.println(numOfNickels);
+		System.out.println(numOfPennies);
+
+		return null;
 	}
 
 	// ****************************************
-	
-	// *   Number of $20 bills:              *
-	// *   Number of $10 bills:              *
-	// *   Number of $5 bills:               *
-	// *   Number of $1 bills:               *
-	// *   Number of quarters:               *
-	// *   Number of dimes:                  *
-	// *   Number of nickels:                *
-	// *   Number of dimes:                  *
-	
+
+	// * Number of $20 bills: *
+	// * Number of $10 bills: *
+	// * Number of $5 bills: *
+	// * Number of $1 bills: *
+	// * Number of quarters: *
+	// * Number of dimes: *
+	// * Number of nickels: *
+	// * Number of dimes: *
 
 }
