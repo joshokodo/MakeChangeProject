@@ -12,7 +12,8 @@ public class MakeChange {
 		double price = 0.0;
 		double tender = 0.0;
 
-		System.out.println("Welcome to the Money Sink! " + "Where we don't judge you for blowing all that moola, Baby!");
+		System.out.println("Welcome to the Money Sink! " 
+							+ "Where we don't judge you for blowing all that moola, Baby!");
 
 		price = getMoneyInput("Enter the total price of the goods being purchased: ");
 
