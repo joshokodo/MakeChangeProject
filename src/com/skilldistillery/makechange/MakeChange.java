@@ -7,19 +7,12 @@ public class MakeChange {
 
 	static Scanner kb = new Scanner(System.in);
 
-	
-	
 	public static void main(String[] args) {
 
 		double price = 0.0;
 		double tender = 0.0;
 
-		double a = .25;
-		double b = 100;
-		System.out.println(a * b);
-
-		System.out
-				.println("Welcome to the Money Sink! " + "Where we don't judge you for blowing all that moola, Baby!");
+		System.out.println("Welcome to the Money Sink! " + "Where we don't judge you for blowing all that moola, Baby!");
 
 		price = getMoneyInput("Enter the total price of the goods being purchased: ");
 
@@ -90,22 +83,14 @@ public class MakeChange {
 		System.out.println("*                                      *");
 		System.out.printf("*   Change back:    $ %6.2f%11s*%n", change, "");
 		System.out.println("*                                      *");
-		// loop to add specific change values
+		System.out.print(getDollarChangeStrings(changeDollars));
+		System.out.print(getCoinChangeString(changeCoins));
 		System.out.println("*                                      *");
 		System.out.println("****************************************");
-		getDollarChangeStrings(changeDollars);
-		System.out.println();
-		getCoinChangeString(changeCoins);
 	}
 
-	
-	
-	
-	
-	//TODO refactor to not need to split change and to do it as effectively as possible
-	
 	public static String getDollarChangeStrings(int dollars) {
-		String changeString = "";
+		String change = "";
 
 		int remainingDollars = dollars;
 
@@ -121,14 +106,24 @@ public class MakeChange {
 		int numOf1s = remainingDollars / 1;
 		remainingDollars %= 1;
 
-		System.out.println(numOf20s);
-		System.out.println(numOf10s);
-		System.out.println(numOf5s);
-		System.out.println(numOf1s);
-		return null;
+		if (numOf20s > 0) {
+			change += String.format("*   Number of $20 bills:      %3d      *%n", numOf20s);
+		}
+		if (numOf10s > 0) {
+			change += String.format("*   Number of $10 bills:      %3d      *%n", numOf10s);
+		}
+		if (numOf5s > 0) {
+			change += String.format("*   Number of $5 bills:       %3d      *%n", numOf5s);
+		}
+		if (numOf1s > 0) {
+			change += String.format("*   Number of $1 bills:       %3d      *%n", numOf1s);
+		}
+
+		return change;
 	}
 
 	public static String getCoinChangeString(double coins) {
+		String change = "";
 
 		int remainingCoins = (int) (coins * 100);
 
@@ -144,23 +139,20 @@ public class MakeChange {
 		int numOfPennies = remainingCoins / 01;
 		remainingCoins %= 01;
 
-		System.out.println(numOfQuarters);
-		System.out.println(numOfDimes);
-		System.out.println(numOfNickels);
-		System.out.println(numOfPennies);
+		if (numOfQuarters > 0) {
+			change += String.format("*   Number of Quarters:       %3d      *%n", numOfQuarters);
+		}
+		if (numOfDimes > 0) {
+			change += String.format("*   Number of Dimes:          %3d      *%n", numOfDimes);
+		}
+		if (numOfNickels > 0) {
+			change += String.format("*   Number of Nickels:        %3d      *%n", numOfNickels);
+		}
+		if (numOfPennies > 0) {
+			change += String.format("*   Number of Pennies:        %3d      *%n", numOfPennies);
+		}
 
-		return null;
+		return change;
 	}
-
-	// ****************************************
-
-	// * Number of $20 bills: *
-	// * Number of $10 bills: *
-	// * Number of $5 bills: *
-	// * Number of $1 bills: *
-	// * Number of quarters: *
-	// * Number of dimes: *
-	// * Number of nickels: *
-	// * Number of dimes: *
 
 }
