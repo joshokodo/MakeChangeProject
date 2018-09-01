@@ -54,7 +54,7 @@ public class MakeChange {
 
 					System.out.println("Not a Positive value. Please try again: ");
 
-					kb.nextLine(); // refreshes the scanner
+					kb.nextLine(); // refreshes the scanner to prevent infinite loop
 					continue; // restarts loop
 
 				}
@@ -64,12 +64,12 @@ public class MakeChange {
 			} catch (InputMismatchException e) {
 
 				System.out.println("Not a numeric value. Please try again: ");
-				kb.nextLine(); // refreshes the scanner
+				kb.nextLine(); // refreshes the scanner to prevent infinite loop
 				continue; // restarts loop
 			}
 
 		}
-
+		kb.nextLine();//refreshes scanner to prevent double inputs
 		return cheddar;
 
 	}
