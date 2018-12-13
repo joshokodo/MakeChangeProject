@@ -1,5 +1,5 @@
 ## Week 1 Homework: Make Change Project
-
+![Alt text](makechangeimg.png "Front Page")
 ### Overview
 This program was assigned in our first week to practice new Java programming concepts such as loops, scanner input and methods.
 
