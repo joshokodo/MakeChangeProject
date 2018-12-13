@@ -1,4 +1,4 @@
-## Week 1 Homework Make Change Project
+## Week 1 Homework: Make Change Project
 
 ### Overview
 This program was assigned in our first week to practice new Java programming concepts such as loops, scanner input and methods.
